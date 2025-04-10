@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KBZ Pay Transfer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="phone-number" id="phone">09787052931</div>
+      <div class="button-group">
+        <button class="btn" onclick="copyPhone()">Copy</button>
+        <button class="btn" onclick="window.open('kbzpay://', '_blank')">ငွေလွှဲမည်</button>
+      </div>
+      <p class="note">
+        Phone number ကို copy လုပ်ပြီး KBZ Pay မှာ transfer လုပ်ပါ။
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function copyPhone() {
+      const phone = document.getElementById("phone").innerText;
+      navigator.clipboard.writeText(phone).then(() => {
+        alert("Copied!");
+      });
+    }
+  </script>
+</body>
+</html>
